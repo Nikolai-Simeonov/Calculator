@@ -1,0 +1,316 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+@import "./variables";
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background:#000;
+
+}
+
+.calculator-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border-bottom:2px solid transparent;
+    border-image: linear-gradient(to right, transparent, #fff , transparent);
+    border-image-slice: 1;
+    .calculator-grid {
+        display: grid;
+        width: auto;
+        margin-bottom:10px;
+        grid-template-columns: repeat(4, 90px);
+        grid-template-rows: minmax(80px, 150px) repeat(5, 90px);
+        background:transparent;
+        > button {
+            background: $mainColor;
+            color:#fff;
+            font-size:25px;
+            cursor: pointer;
+            outline: none;
+            border:0;
+            border-radius:35px;
+            margin:5px;
+            transition:0.2s;
+            &:active{
+                background: $mainColorActive;
+                transition:0.2s;
+            }
+        }
+        :nth-child(2),
+        :nth-child(3){
+            color:rgb(218, 76, 66);
+        }
+        :nth-child(4),
+        :nth-child(8),
+        :nth-child(12),
+        :nth-child(16),
+        :nth-child(19){
+            color:rgb(64, 235, 64);
+            font-size:32px;
+        }
+        .output {
+            grid-column: 1 / -1;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-around;
+            flex-direction: column;
+            padding: 10px;
+            word-wrap: break-word;
+            word-break: break-all;
+            overflow-y:auto;
+            font-weight: 800;
+            border-bottom:2px solid white;
+            border-image: linear-gradient(to right, transparent, white , transparent);
+            border-image-slice: 1;
+            margin-bottom:10px;
+            .previous-operand {
+                color: rgb(200, 200, 200);
+                font-size: 28px;
+            }
+            .current-operand {
+                color: #fff;
+                font-size: 32px;
+            }
+          }
+        .span-two {
+            grid-column: span 2;
+        }    
+    }
+}
+
+
+
+
+
+@media (min-width: 500.98px){
+    body{
+        background:#000;
+    }
+
+}
+@media (min-width: 700px) {   
+    body{
+        background: linear-gradient(to right bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)),
+        url(https://ideasbeams.com/wp-content/uploads/2020/11/Ideasbeams-Top-Banner-scaled.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .calculator-box{
+        width:45%;
+    }
+}
+
+@media (min-width: 900px) { 
+    body{
+        background: linear-gradient(to right bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)),
+        url(https://ideasbeams.com/wp-content/uploads/2020/11/Ideasbeams-Top-Banner-scaled.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .calculator-box{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-top:2px solid transparent;
+        border-bottom:2px solid transparent;
+        border-image: linear-gradient(to right, transparent, #fff , transparent);
+        border-image-slice: 1; 
+        width:35%;
+        background:linear-gradient(to bottom right, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
+        backdrop-filter: blur(4px);
+        .calculator-grid {
+            display: grid;
+            width: auto;
+            margin-bottom:10px;
+            grid-template-columns: repeat(4, 80px);
+            grid-template-rows: minmax(80px, 100px) repeat(5, 80px);
+            animation: animate 4s linear infinite;
+            > button {
+                font-size:20px;
+                cursor: pointer;
+                border-radius:10px;
+                margin:5px;
+                transition:1s;
+                &:hover{
+                    background: #0f0;
+                    transition:0s;
+                }
+            }
+            .output {
+                border-bottom:2px solid white;
+                border-image: linear-gradient(to right, transparent, white , transparent);
+                border-image-slice: 1;
+                margin-bottom:10px;
+                .previous-operand {
+                    color: rgb(200, 200, 200);
+                    font-size: 18px;
+                }
+                .current-operand {
+                    color: #fff;
+                    font-size: 20px;
+                }
+              }
+        }
+    }
+
+}
+
+
+
+
+
+@media (min-width: 1200px) {   
+
+    body {
+        background: linear-gradient(to right bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)),
+        url(https://ideasbeams.com/wp-content/uploads/2020/11/Ideasbeams-Top-Banner-scaled.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    
+    .calculator-box{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-top:2px solid transparent;
+        border-bottom:2px solid transparent;
+        border-image: linear-gradient(to right, transparent, #fff , transparent);
+        border-image-slice: 1; 
+        width:25%;
+        background:linear-gradient(to bottom right, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
+        backdrop-filter: blur(4px);
+        .calculator-grid {
+            display: grid;
+            width: auto;
+            margin-bottom:10px;
+            grid-template-columns: repeat(4, 70px);
+            grid-template-rows: minmax(80px, 100px) repeat(5, 70px);
+            animation: animate 4s linear infinite;
+            > button {
+                font-size:20px;
+                cursor: pointer;
+                border-radius:0;
+                margin:5px;
+                transition:1s;
+                &:hover{
+                    background: #0f0;
+                    transition:0s;
+                }
+            }
+            .output {
+                border-bottom:2px solid white;
+                border-image: linear-gradient(to right, transparent, white , transparent);
+                border-image-slice: 1;
+                margin-bottom:10px;
+                .previous-operand {
+                    color: rgb(200, 200, 200);
+                    font-size: 18px;
+                }
+                .current-operand {
+                    color: #fff;
+                    font-size: 20px;
+                }
+              }
+        }
+    }
+    
+    .hexagon {
+        position: relative;
+        background: #111;
+        clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        transition: 1s;
+    }
+    .hexagon:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 100%;
+        pointer-events: none;
+        background: rgba(255, 255, 255, 0.02);
+    }
+    @keyframes animate {
+        0% {
+            filter: hue-rotate(0deg);
+        }
+    
+        100% {
+            filter: hue-rotate(360deg);
+        }
+    }
+
+
+}
+
+
+
+
+
+/*// Large devices (desktops, less than 1200px)*/
+@media (min-width: 1400.98px) {
+
+    .calculator-box{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-top:2px solid transparent;
+        border-bottom:2px solid transparent;
+        border-image: linear-gradient(to right, transparent, #fff , transparent);
+        border-image-slice: 1; 
+        width:25%;
+        background:linear-gradient(to bottom right, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
+        backdrop-filter: blur(4px);
+        .calculator-grid {
+            display: grid;
+            width: auto;
+            margin-bottom:10px;
+            grid-template-columns: repeat(4, 90px);
+            grid-template-rows: minmax(80px, 100px) repeat(5, 90px);
+            animation: animate 4s linear infinite;
+            > button {
+                font-size:22px;
+                cursor: pointer;
+                border-radius:0;
+                margin:5px;
+                transition:1s;
+                &:hover{
+                    background: #0f0;
+                    transition:0s;
+                }
+            }
+            .output {
+                border-bottom:2px solid white;
+                border-image: linear-gradient(to right, transparent, white , transparent);
+                border-image-slice: 1;
+                margin-bottom:10px;
+                .previous-operand {
+                    color: rgb(200, 200, 200);
+                    font-size: 20px;
+                }
+                .current-operand {
+                    color: #fff;
+                    font-size: 22px;
+                }
+              }
+        }
+    }
+
+
+}

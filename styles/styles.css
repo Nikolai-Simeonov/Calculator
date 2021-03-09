@@ -1,0 +1,397 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #000;
+}
+
+.calculator-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  border-bottom: 2px solid transparent;
+  -o-border-image: linear-gradient(to right, transparent, #fff, transparent);
+     border-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(#fff), to(transparent));
+     border-image: linear-gradient(to right, transparent, #fff, transparent);
+  border-image-slice: 1;
+}
+
+.calculator-box .calculator-grid {
+  display: -ms-grid;
+  display: grid;
+  width: auto;
+  margin-bottom: 10px;
+  -ms-grid-columns: (90px)[4];
+      grid-template-columns: repeat(4, 90px);
+  -ms-grid-rows: minmax(80px, 150px) (90px)[5];
+      grid-template-rows: minmax(80px, 150px) repeat(5, 90px);
+  background: transparent;
+}
+
+.calculator-box .calculator-grid > button {
+  background: #2d2d2d;
+  color: #fff;
+  font-size: 25px;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  border-radius: 35px;
+  margin: 5px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.calculator-box .calculator-grid > button:active {
+  background: #5a5a5a;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.calculator-box .calculator-grid :nth-child(2),
+.calculator-box .calculator-grid :nth-child(3) {
+  color: #da4c42;
+}
+
+.calculator-box .calculator-grid :nth-child(4),
+.calculator-box .calculator-grid :nth-child(8),
+.calculator-box .calculator-grid :nth-child(12),
+.calculator-box .calculator-grid :nth-child(16),
+.calculator-box .calculator-grid :nth-child(19) {
+  color: #40eb40;
+  font-size: 32px;
+}
+
+.calculator-box .calculator-grid .output {
+  grid-column: 1 / -1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 10px;
+  word-wrap: break-word;
+  word-break: break-all;
+  overflow-y: auto;
+  font-weight: 800;
+  border-bottom: 2px solid white;
+  -o-border-image: linear-gradient(to right, transparent, white, transparent);
+     border-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(white), to(transparent));
+     border-image: linear-gradient(to right, transparent, white, transparent);
+  border-image-slice: 1;
+  margin-bottom: 10px;
+}
+
+.calculator-box .calculator-grid .output .previous-operand {
+  color: #c8c8c8;
+  font-size: 28px;
+}
+
+.calculator-box .calculator-grid .output .current-operand {
+  color: #fff;
+  font-size: 32px;
+}
+
+.calculator-box .calculator-grid .span-two {
+  grid-column: span 2;
+}
+
+@media (min-width: 500.98px) {
+  body {
+    background: #000;
+  }
+}
+
+@media (min-width: 700px) {
+  body {
+    background: -webkit-gradient(linear, left top, right bottom, from(rgba(0, 0, 0, 0.6)), to(rgba(0, 0, 0, 0.1))), url(https://ideasbeams.com/wp-content/uploads/2020/11/Ideasbeams-Top-Banner-scaled.jpg);
+    background: linear-gradient(to right bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url(https://ideasbeams.com/wp-content/uploads/2020/11/Ideasbeams-Top-Banner-scaled.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .calculator-box {
+    width: 45%;
+  }
+}
+
+@media (min-width: 900px) {
+  body {
+    background: -webkit-gradient(linear, left top, right bottom, from(rgba(0, 0, 0, 0.6)), to(rgba(0, 0, 0, 0.1))), url(https://ideasbeams.com/wp-content/uploads/2020/11/Ideasbeams-Top-Banner-scaled.jpg);
+    background: linear-gradient(to right bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url(https://ideasbeams.com/wp-content/uploads/2020/11/Ideasbeams-Top-Banner-scaled.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .calculator-box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    border-top: 2px solid transparent;
+    border-bottom: 2px solid transparent;
+    -o-border-image: linear-gradient(to right, transparent, #fff, transparent);
+       border-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(#fff), to(transparent));
+       border-image: linear-gradient(to right, transparent, #fff, transparent);
+    border-image-slice: 1;
+    width: 35%;
+    background: -webkit-gradient(linear, left top, right bottom, from(rgba(255, 255, 255, 0.3)), to(rgba(255, 255, 255, 0.1)));
+    background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
+    -webkit-backdrop-filter: blur(4px);
+            backdrop-filter: blur(4px);
+  }
+  .calculator-box .calculator-grid {
+    display: -ms-grid;
+    display: grid;
+    width: auto;
+    margin-bottom: 10px;
+    -ms-grid-columns: (80px)[4];
+        grid-template-columns: repeat(4, 80px);
+    -ms-grid-rows: minmax(80px, 100px) (80px)[5];
+        grid-template-rows: minmax(80px, 100px) repeat(5, 80px);
+    -webkit-animation: animate 4s linear infinite;
+            animation: animate 4s linear infinite;
+  }
+  .calculator-box .calculator-grid > button {
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 10px;
+    margin: 5px;
+    -webkit-transition: 1s;
+    transition: 1s;
+  }
+  .calculator-box .calculator-grid > button:hover {
+    background: #0f0;
+    -webkit-transition: 0s;
+    transition: 0s;
+  }
+  .calculator-box .calculator-grid .output {
+    border-bottom: 2px solid white;
+    -o-border-image: linear-gradient(to right, transparent, white, transparent);
+       border-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(white), to(transparent));
+       border-image: linear-gradient(to right, transparent, white, transparent);
+    border-image-slice: 1;
+    margin-bottom: 10px;
+  }
+  .calculator-box .calculator-grid .output .previous-operand {
+    color: #c8c8c8;
+    font-size: 18px;
+  }
+  .calculator-box .calculator-grid .output .current-operand {
+    color: #fff;
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 1200px) {
+  body {
+    background: -webkit-gradient(linear, left top, right bottom, from(rgba(0, 0, 0, 0.6)), to(rgba(0, 0, 0, 0.1))), url(https://ideasbeams.com/wp-content/uploads/2020/11/Ideasbeams-Top-Banner-scaled.jpg);
+    background: linear-gradient(to right bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url(https://ideasbeams.com/wp-content/uploads/2020/11/Ideasbeams-Top-Banner-scaled.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .calculator-box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    border-top: 2px solid transparent;
+    border-bottom: 2px solid transparent;
+    -o-border-image: linear-gradient(to right, transparent, #fff, transparent);
+       border-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(#fff), to(transparent));
+       border-image: linear-gradient(to right, transparent, #fff, transparent);
+    border-image-slice: 1;
+    width: 25%;
+    background: -webkit-gradient(linear, left top, right bottom, from(rgba(255, 255, 255, 0.3)), to(rgba(255, 255, 255, 0.1)));
+    background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
+    -webkit-backdrop-filter: blur(4px);
+            backdrop-filter: blur(4px);
+  }
+  .calculator-box .calculator-grid {
+    display: -ms-grid;
+    display: grid;
+    width: auto;
+    margin-bottom: 10px;
+    -ms-grid-columns: (70px)[4];
+        grid-template-columns: repeat(4, 70px);
+    -ms-grid-rows: minmax(80px, 100px) (70px)[5];
+        grid-template-rows: minmax(80px, 100px) repeat(5, 70px);
+    -webkit-animation: animate 4s linear infinite;
+            animation: animate 4s linear infinite;
+  }
+  .calculator-box .calculator-grid > button {
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 0;
+    margin: 5px;
+    -webkit-transition: 1s;
+    transition: 1s;
+  }
+  .calculator-box .calculator-grid > button:hover {
+    background: #0f0;
+    -webkit-transition: 0s;
+    transition: 0s;
+  }
+  .calculator-box .calculator-grid .output {
+    border-bottom: 2px solid white;
+    -o-border-image: linear-gradient(to right, transparent, white, transparent);
+       border-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(white), to(transparent));
+       border-image: linear-gradient(to right, transparent, white, transparent);
+    border-image-slice: 1;
+    margin-bottom: 10px;
+  }
+  .calculator-box .calculator-grid .output .previous-operand {
+    color: #c8c8c8;
+    font-size: 18px;
+  }
+  .calculator-box .calculator-grid .output .current-operand {
+    color: #fff;
+    font-size: 20px;
+  }
+  .hexagon {
+    position: relative;
+    background: #111;
+    -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    -webkit-transition: 1s;
+    transition: 1s;
+  }
+  .hexagon:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    pointer-events: none;
+    background: rgba(255, 255, 255, 0.02);
+  }
+  @-webkit-keyframes animate {
+    0% {
+      -webkit-filter: hue-rotate(0deg);
+              filter: hue-rotate(0deg);
+    }
+    100% {
+      -webkit-filter: hue-rotate(360deg);
+              filter: hue-rotate(360deg);
+    }
+  }
+  @keyframes animate {
+    0% {
+      -webkit-filter: hue-rotate(0deg);
+              filter: hue-rotate(0deg);
+    }
+    100% {
+      -webkit-filter: hue-rotate(360deg);
+              filter: hue-rotate(360deg);
+    }
+  }
+}
+
+/*// Large devices (desktops, less than 1200px)*/
+@media (min-width: 1400.98px) {
+  .calculator-box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    border-top: 2px solid transparent;
+    border-bottom: 2px solid transparent;
+    -o-border-image: linear-gradient(to right, transparent, #fff, transparent);
+       border-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(#fff), to(transparent));
+       border-image: linear-gradient(to right, transparent, #fff, transparent);
+    border-image-slice: 1;
+    width: 25%;
+    background: -webkit-gradient(linear, left top, right bottom, from(rgba(255, 255, 255, 0.3)), to(rgba(255, 255, 255, 0.1)));
+    background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
+    -webkit-backdrop-filter: blur(4px);
+            backdrop-filter: blur(4px);
+  }
+  .calculator-box .calculator-grid {
+    display: -ms-grid;
+    display: grid;
+    width: auto;
+    margin-bottom: 10px;
+    -ms-grid-columns: (90px)[4];
+        grid-template-columns: repeat(4, 90px);
+    -ms-grid-rows: minmax(80px, 100px) (90px)[5];
+        grid-template-rows: minmax(80px, 100px) repeat(5, 90px);
+    -webkit-animation: animate 4s linear infinite;
+            animation: animate 4s linear infinite;
+  }
+  .calculator-box .calculator-grid > button {
+    font-size: 22px;
+    cursor: pointer;
+    border-radius: 0;
+    margin: 5px;
+    -webkit-transition: 1s;
+    transition: 1s;
+  }
+  .calculator-box .calculator-grid > button:hover {
+    background: #0f0;
+    -webkit-transition: 0s;
+    transition: 0s;
+  }
+  .calculator-box .calculator-grid .output {
+    border-bottom: 2px solid white;
+    -o-border-image: linear-gradient(to right, transparent, white, transparent);
+       border-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(white), to(transparent));
+       border-image: linear-gradient(to right, transparent, white, transparent);
+    border-image-slice: 1;
+    margin-bottom: 10px;
+  }
+  .calculator-box .calculator-grid .output .previous-operand {
+    color: #c8c8c8;
+    font-size: 20px;
+  }
+  .calculator-box .calculator-grid .output .current-operand {
+    color: #fff;
+    font-size: 22px;
+  }
+}
+/*# sourceMappingURL=styles.css.map */
